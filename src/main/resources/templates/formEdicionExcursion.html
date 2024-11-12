@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Editar excursion</title>
+<link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+	<h2>Edición de la excursión</h2>
+	<form th:action="@{/excursion/modificar/{id}(id=${excursion.idExcursion})}" th:object="${excursion}" method="post">
+		<p>
+			<label for="descripcion">Descripción: </label>
+			<input type="text" th:field="*{descripcion}">
+		</p>
+		<p>
+			<label for="origen">Origen: </label>
+			<input type="text" th:field="*{origen}">
+		</p>
+		<p>
+			<label for="destino">Destino: </label>
+			<input type="text" th:field="*{destino}">
+		</p>
+		<p>
+			<label for="fechaExcursion">Fecha de excursión: </label>
+			<input type="date" th:field="*{fechaExcursion}">
+		</p>
+		<p>
+			<label for="duracion">Duración (días): </label>
+			<input type="text" th:field="*{duracion}">
+		</p>
+		<p>
+			<label for="estado">Estado: </label>
+			<select th:field="*{estado}">
+				<option value="CREADO">CREADO</option>
+				<option value="CANCELADO">CANCELADO</option>
+				<option value="TERMINADO">TERMINADO</option>
+			</select>
+		</p>
+		<p>
+			<label for="destacado">Destacado: </label>
+			<select th:field="*{destacado}">
+				<option value="S">Si</option>
+				<option value="N">No</option>
+			</select>
+		</p>
+		<p>
+			<label for="aforoMaximo">Aforo máximo: </label>
+			<input type="text" th:field="*{aforoMaximo}">
+		</p>
+		<p>
+			<label for="minimoAsistentes">Mínimo de asistentes: </label>
+			<input type="text" th:field="*{minimoAsistentes}">
+		</p>
+		<p>
+			<label for="precioUnitario">Precio por persona (euros): </label>
+			<input type="text" th:field="*{precioUnitario}">
+		</p>
+		<p>
+			<label for="imagen">Imagen: </label>
+			<input type="text" th:field="*{imagen}">
+		</p>
+		<p>
+			<label for="fechaAlta">Fecha de alta: </label>
+			<input type="date" th:field="*{fechaAlta}" disabled> <!-- la muestro pero no dejo que se modifique -->
+		</p>
+		
+		<p><input type="submit" value="Enviar"></p>
+	</form>
+	<p><a th:href="@{/}">Volver</a></p>
+</body>
+</html>

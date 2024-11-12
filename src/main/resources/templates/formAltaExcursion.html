@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Alta Excursion</title>
+<link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+	<h2>Alta de excursión</h2>
+	<form th:action="@{/excursion/alta}" method="post">
+		<p><input type="text" name="idExcursion" placeholder="idExcursion"></p>
+		<p><input type="text" name="descripcion" placeholder="Descripción"></p>
+		<p><input type="text" name="origen" placeholder="Origen"></p>
+		<p><input type="text" name="destino" placeholder="Destino"></p>
+		<p>
+			<label for="fechaExcursion">Fecha de excursión: </label>
+			<input type="date" name="fechaExcursion">
+		</p>
+		<p><input type="text" name="duracion" placeholder="Duración (días)"></p>
+		<p>
+			<label for="estado">Estado: </label>
+			<select name="estado">
+				<option value="CREADO">CREADO</option>
+			</select>
+		</p>
+		<p>
+			<label for="destacado">Destacado: </label>
+			<select name="destacado">
+				<option value="S">Si</option>
+				<option value="N">No</option>
+			</select>
+		</p>
+		<p><input type="text" name="aforoMaximo" placeholder="Aforo máximo"></p>
+		<p><input type="text" name="minimoAsistentes" placeholder="Mínimo de asistentes"></p>
+		<p><input type="text" name="precioUnitario" placeholder="Precio por persona"></p>
+		<p><input type="text" name="imagen" placeholder="Imagen"></p>
+				
+		<p><input type="submit" value="Enviar"></p>
+	</form>
+	<p><a th:href="@{/}">Volver</a></p>
+</body>
+</html>
